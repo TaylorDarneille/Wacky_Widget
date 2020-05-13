@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
-# Define the home view
-def home(request):
-  return render(request, 'home.html')
+# Define the index view
+def index(request):
+  return render(request, 'index.html')
