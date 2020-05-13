@@ -1,19 +1,81 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Wish List</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
-    integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
   <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     body {
       text-align: center;
       margin: 2rem;
-      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    element.style {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      width: 280px;
+      height: auto;
+      border-collapse: collapse;
+      border: 2px solid lightgrey;
+    }
+
+    th {
+      height: 45px;
+      background-color: rgb(224, 224, 224);
+    }
+
+    th,
+    td {
+      height: 45px;
+      font-size: 20px;
+      border: 2px solid grey;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgb(255, 255, 255);
+    }
+
+    tr:nth-child(odd) {
+      background-color: rgb(242, 242, 242);
+    }
+
+    #red {
+      border: none;
+      background: transparent;
+      color: red;
+      font-size: 20px;
+    }
+
+    .AddWish {
+      background: rgb(230, 230, 230);
+      border: none;
+      width: 11em;
+      height: 2.5em;
+      font-size: 17px;
+      margin: 1em; 
     }
   </style>
 </head>
@@ -22,7 +84,7 @@
 
   <h1>Wish List Items!</h1>
 
-  <div>
+  <div class="container">
     {% if items.count %}
     <table>
       <thead>
@@ -40,7 +102,8 @@
           <td>
             <form method="POST" action="{% url 'delete' item.id %}">
               {% csrf_token%}
-              <input type="submit" value="X">
+              <!-- <input type="submit" value="X"> -->
+              <button id="red" type="submit">X</button>
             </form>
           </td>
         </tr>
@@ -52,9 +115,13 @@
     <hr>
     {% endif %}
   </div>
+  <br>
+  <hr>
   <a href="{% url 'add' %}">
-    <input type="submit" value="Add A Wish Item">
+    <!-- <input type="submit" value="Add A Wish Item"> -->
+    <button class="AddWish" type="submit">Add A Wish Item</button>
   </a>
 
 </body>
+
 </html>
