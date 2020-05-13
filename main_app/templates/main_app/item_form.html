@@ -1,0 +1,28 @@
+<style>
+  body {
+    text-align: center;
+    margin: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+
+<h1>Add A Wish Item</h1>
+
+<hr>
+
+<form action="add/" method="post">{% csrf_token %}
+  Decription:<input type="text" name="content">
+  <input type="submit" value="Add Todo Item">
+</form>
+
+<!-- <ul>
+  {% for item in all_items %}
+  <li>
+    {{item.content}}
+    <form action="/deleteTodoItem/{{item.id}}/" method="post">
+     
+      <input type="submit" value="Delete"> {% csrf_token %}
+    </form>
+  </li>
+  {% endfor %}
+</ul> -->
