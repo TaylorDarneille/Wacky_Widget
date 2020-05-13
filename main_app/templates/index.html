@@ -7,7 +7,8 @@
   <title>Document</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+    integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
   <style>
     body {
       text-align: center;
@@ -21,31 +22,39 @@
 
   <h1>Wish List Items!</h1>
 
-  {% if item_list|length == 0 %}
-  <p>No Wish Items Exist</p>
-  <hr>
-  {% else %}
-  <table>
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Delete
-      </tr>
-      </th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-
-        </td>
-        <td>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  {% endif %}
-  <input type="submit" value="Add A Wish Item" class="btn">
+  <div>
+    {% if items.count %}
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <tr>
+          <td>
+            {{ item.description }}
+          </td>
+          <td>
+            <form method="POST" action="{% url 'delete' item.id %}">
+              {% csrf_token%}
+              <input type="submit" value="X">
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No Wish Items Exist</p>
+    <hr>
+    {% endif %}
+  </div>
+  <a href="{% url 'add' %}">
+    <input type="submit" value="Add A Wish Item">
+  </a>
 
 </body>
 </html>
