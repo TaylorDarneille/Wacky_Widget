@@ -1,5 +1,5 @@
 """
-WSGI config for wish__list project.
+WSGI config for wackywidgets project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wish__list.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wackywidgets.settings')
 
 application = get_wsgi_application()
