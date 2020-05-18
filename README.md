@@ -1,7 +1,7 @@
 # WACKY WIDGET
 
 ## Wire Frames
-![wireframe](https://github.com/lemonmade1/wackywidgets/blob/master/main_app/static/images/wish_list_2.png)
+![wireframe](https://github.com/lemonmade1/Wacky_Widget/blob/master/main_app/static/images/Project%203%20Ass..png)
 
 ## Technologies
 HTML | CSS | Javascipt | Python | Django | Postgresql
