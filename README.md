@@ -1,4 +1,4 @@
-# WISH LIST
+# WACKY WIDGET
 
 ## Wire Frames
 ![wireframe](https://github.com/lemonmade1/wackywidgets/blob/master/main_app/static/images/wish_list_2.png)
