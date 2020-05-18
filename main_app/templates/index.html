@@ -90,6 +90,7 @@
       <thead>
         <tr>
           <th>Description</th>
+          <th>Quality</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -98,6 +99,9 @@
         <tr>
           <td>
             {{ item.description }}
+          </td>
+          <td>
+            {{ item.quantity }}
           </td>
           <td>
             <form method="POST" action="{% url 'delete' item.id %}">
