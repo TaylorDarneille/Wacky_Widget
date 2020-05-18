@@ -6,8 +6,11 @@ from django.views.generic.edit import CreateView, DeleteView
 def index(request):
   items = Item.objects.all()
   print(items)
+  quantity = Item.objects.all()
+  print(quantity)
   return render(request, 'index.html', {
-    'items': items
+    'items': items,
+    'quantity': quantity,
   })
 
 class ItemCreate(CreateView):

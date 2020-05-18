@@ -52,6 +52,7 @@
       height: 45px;
       font-size: 20px;
       border: 2px solid grey;
+      padding: .5em;
     }
 
     tr:nth-child(even) {
@@ -106,7 +107,6 @@
           <td>
             <form method="POST" action="{% url 'delete' item.id %}">
               {% csrf_token%}
-              <!-- <input type="submit" value="X"> -->
               <button id="red" type="submit">X</button>
             </form>
           </td>
@@ -122,7 +122,6 @@
   <br>
   <hr>
   <a href="{% url 'add' %}">
-    <!-- <input type="submit" value="Add A Wish Item"> -->
     <button class="AddWish" type="submit">Add A Widget Item</button>
   </a>
 
